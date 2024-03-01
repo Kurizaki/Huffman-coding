@@ -1,27 +1,25 @@
 # Projekt-Dokumentation
 
-☝️ Alle Text-Stellen, welche mit einem ✍️ beginnen, können Sie löschen, sobald Sie die entsprechende Stellen ausgefüllt haben.
+Salma Tanner & Keanu Koelewijn
 
-✍️ Ihr Gruppenname und Ihre Nachnamen
-
-| Datum | Version | Zusammenfassung                                              |
-| ----- | ------- | ------------------------------------------------------------ |
+| Datum | Version | Zusammenfassung                                                                                                                             |
+| ----- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 |       | 0.0.1   | ✍️ Jedes Mal, wenn Sie an dem Projekt arbeiten, fügen Sie hier eine neue Zeile ein und beschreiben in *einem* Satz, was Sie erreicht haben. |
-|       | ...     |                                                              |
-|       | 1.0.0   |                                                              |
+|       | ...     |                                                                                                                                             |
+|       | 1.0.0   |                                                                                                                                             |
 
 ## 1 Informieren
 
 ### 1.1 Ihr Projekt
 
-✍️ Beschreiben Sie Ihr Projekt in einem griffigen Satz.
+In diesem Projekt erstellen wir eine Klassenbibliothek in der Dateien mittels der Huffman-Codierungs prinzip komprimiert werden und dekomprimiert, Diese Bibliothek verwenden wir in einer WPF Applikation um zu demonstrieren wie die Bibliothek funktioniert.
 
 ### 1.2 User Stories
 
-| US-№ | Verbindlichkeit | Typ  | Beschreibung                       |
-| ---- | --------------- | ---- | ---------------------------------- |
-| 1    |                 |      | Als ein 🤷‍♂️ möchte ich 🤷‍♂️, damit 🤷‍♂️ |
-| ...  |                 |      |                                    |
+| US-№ | Verbindlichkeit | Typ | Beschreibung                                     |
+| ---- | --------------- | --- | ------------------------------------------------ |
+| 1    |                 |     | Als ein Entwickler möchte ich 🤷‍♂️, damit 🤷‍♂️ |
+| ...  |                 |     |                                                  |
 
 ✍️ Jede User Story hat eine ganzzahlige Nummer (1, 2, 3 etc.), eine Verbindlichkeit (Muss oder Kann?), und einen Typ (Funktional, Qualität, Rand). Die User Story selber hat folgende Form: *Als ein 🤷‍♂️ möchte ich 🤷‍♂️, damit 🤷‍♂️*.
 
