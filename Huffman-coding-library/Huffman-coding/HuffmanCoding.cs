@@ -50,7 +50,7 @@
             return encodedText;
         }
 
-        public string Decode(string encodedText)
+        public string DecodeText(string encodedText, string targetPath)
         {
             var decodedText = "";
             var currentNode = _root;
@@ -64,7 +64,25 @@
                     currentNode = _root;
                 }
             }
+            File.WriteAllText(targetPath, decodedText);
 
+            return decodedText;
+        }
+
+        public string DecodeFile(string sourcePath)
+        {
+            var encodedText = File.ReadAllText(sourcePath);
+            var decodedText = "";
+            var currentNode = _root;
+            foreach (var bit in encodedText)
+            {
+                currentNode = bit == '0' ? currentNode.Left : currentNode.Right;
+                if (currentNode.Left == null && currentNode.Right == null)
+                {
+                    decodedText += currentNode.Character;
+                    currentNode = _root;
+                }
+            }
             return decodedText;
         }
     }
