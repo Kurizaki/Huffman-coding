@@ -11,7 +11,6 @@ namespace Huffman_UnitTests
     public class HuffmanDecodeTest
     {
         private const string OriginalText = "hello world";
-        private const string EncodedText = "101010010010011111001011110111110010111010";
 
         [TestMethod]
         public void TestDecodeFile()
@@ -19,13 +18,15 @@ namespace Huffman_UnitTests
             // Arrange
             var huffmanCoding = new HuffmanCoding(OriginalText);
             var encodedFilePath = Path.GetTempFileName();
+            var EncodedText = huffmanCoding.EncodeText(OriginalText);
             File.WriteAllText(encodedFilePath, EncodedText);
 
             // Act
+
             var decodedText = huffmanCoding.DecodeFile(encodedFilePath);
 
             // Assert
-            Assert.AreEqual("lllrrdhredhrhl", decodedText);
+            Assert.AreEqual(OriginalText, decodedText);
 
             // Clean up
             File.Delete(encodedFilePath);
