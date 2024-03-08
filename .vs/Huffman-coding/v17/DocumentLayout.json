@@ -1,10 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\keanu\\source\\repos\\Huffman-coding\\",
+  "WorkspaceRootPath": "C:\\Users\\keanu\\source\\repos\\Kurizaki\\Huffman-coding\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\keanu\\source\\repos\\Huffman-coding\\Huffman-coding\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Huffman-coding\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\keanu\\source\\repos\\Huffman-coding\\Huffman-coding\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,9 +24,9 @@
               "DocumentIndex": 0,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\keanu\\source\\repos\\Huffman-coding\\Huffman-coding\\Class1.cs",
-              "RelativeDocumentMoniker": "Huffman-coding\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\..\\Huffman-coding\\Huffman-coding\\Class1.cs",
               "ToolTip": "C:\\Users\\keanu\\source\\repos\\Huffman-coding\\Huffman-coding\\Class1.cs",
-              "RelativeToolTip": "Huffman-coding\\Class1.cs",
+              "RelativeToolTip": "..\\..\\Huffman-coding\\Huffman-coding\\Class1.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-01T07:13:41.484Z"
             }
