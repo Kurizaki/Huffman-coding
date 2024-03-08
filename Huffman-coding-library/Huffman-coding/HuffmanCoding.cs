@@ -1,4 +1,6 @@
-﻿namespace Huffman_coding
+﻿using System.IO;
+using System.Runtime.CompilerServices;
+namespace Huffman_coding
 {
     public class HuffmanCoding
     {
@@ -40,6 +42,21 @@
 
         public string EncodeText(string text)
         {
+            var encodedText = "";
+
+            foreach (var c in text)
+            {
+                encodedText += _encodingTable[c];
+            }
+
+            return encodedText;
+        }
+        
+
+        public string EncodeFile(string filepath)
+        {
+            string text = File.ReadAllText(filepath);
+
             var encodedText = "";
 
             foreach (var c in text)
