@@ -7,11 +7,10 @@ namespace Huffman_coding
         private Dictionary<char, string> _encodingTable = new Dictionary<char, string>();
         private HuffmanNode _root;
 
-        public HuffmanCoding(string text)
+        public HuffmanCoding()
         {
-            var frequencies = CalculateFrequencies(text);
-            _root = HuffmanTree.BuildTree(frequencies);
-            BuildEncodingTable(_root, "");
+
+            Initilaize();
         }
 
         private Dictionary<char, int> CalculateFrequencies(string text)
@@ -28,6 +27,14 @@ namespace Huffman_coding
             return frequencies;
         }
 
+        public void Initilaize()
+        {
+            var text = "default text";
+            var frequencies = CalculateFrequencies(text);
+            _root = HuffmanTree.BuildTree(frequencies);
+            BuildEncodingTable(_root, "");
+
+        }
         private void BuildEncodingTable(HuffmanNode node, string prefix)
         {
             if (node.Left == null && node.Right == null)
