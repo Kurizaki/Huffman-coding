@@ -15,7 +15,6 @@ namespace Huffman_UnitTests
         {
             // Arrange
             var huffmanCoding = new HuffmanCoding();
-            huffmanCoding.Initialize(OriginalText); // Initialize with original text
             var encodedFilePath = Path.GetTempFileName();
             var encodedText = huffmanCoding.EncodeText(OriginalText);
             File.WriteAllText(encodedFilePath, encodedText);
@@ -35,7 +34,6 @@ namespace Huffman_UnitTests
         {
             // Arrange
             var huffmanCoding = new HuffmanCoding();
-            huffmanCoding.Initialize(OriginalText); // Initialize with original text
             var encodedText = huffmanCoding.EncodeText(OriginalText);
             var targetFilePath = Path.GetTempFileName();
 
