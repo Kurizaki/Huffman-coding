@@ -35,17 +35,17 @@ In diesem Projekt erstellen wir eine Klassenbibliothek in der Dateien mittels de
 
 ### 1.3 Testfälle
 
-| TC-№ | Beschreibung                                                                                                                                             | Vorgehen                                                                                                                                                                    | Erwartetes Ergebnis                                                                               |
-| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| 1.1  | Überprüft, ob eine WPF-Applikation mit einer Library erfolgreich ertsellt wurde und ob diese im Github Repository verlinkt wurde.                        | -Projekt in Visual Studio öffnen<br/>-Im Projektmappenexplorer überprüfen, ob Library vorhanden ist<br/>-Github Repository öffnen und überprüfen, ob Projekt verlinkt wurde | Projekt+Repository wurden erstellt und für alle Mitglieder im Repository erfolgreich verlinkt.    |
-| 2.1  | Überprüft, ob in der Library eine Klasse zur Komprimierung codiert wurde.                                                                                | -Projekt in Visual Studio öffnen<br/>-Library aufrufen<br/>-Klasse aufrufen<br/>-Code Logik überprüfen                                                                      | Klasse zur Komprimierung wurde erfolgreich erstellt und Logik implementiert.                      |
-| 3.1  | Überprüft, ob in der Library eine Klasse zur Dekomprimierung codiert wurde.                                                                              | -Projekt in Visual Studio öffnen<br/>-Library aufrufen<br/>-Klasse aufrufen<br/>-Code Logik überprüfen                                                                      | Klasse zur Dekomprimierung wurde erfolgreich erstellt und Logik implementiert.                    |
-| 4.1  | Überprüft, ob in der Library erfolgreich eine Tabelle mit den gegebenen Daten erstellt wurde, damit die Huffmann-Baumstruktur implementiert werden kann. | -Projekt in Visual Studio öffnen<br/>-Library aufrufen<br/>-Methode zur Tabellenerstellung finden<br/>-Code Logik überprüfen                                                | Tabelle zur Huffmann-Baumstruktur wird erfolgreich erstellt beim eingeben von Daten.              |
-| 5.1  | Überprüft, ob erfolgreich eine Huffmann-Baumstruktur implementiert wurde.                                                                                | -Projekt in Visual Studio öffnen<br/>                                                                                                                                       | Huffmann-Baumstruktur wird erfolgreich erstellt, sobald Daten eingegeben werden.                  |
-| 6.1  | Überprüft, ob die Library erfolgreich in der WPF-Applikation eingebunden werden konnte.                                                                  | -Projekt in Visual Studio öffnen<br/>                                                                                                                                       | Library wurde erfolgreich und funktionsfähig in die Applikation eingebunden.                      |
-| 7.1  | Überprüft, ob dem Benutzer in der Applikation die Möglichkeit zur Auswahl zwischen De-/Komprimierung gegeben wird.                                       |                                                                                                                                                                             | Benutzer hat bei Benutzen der Applikation die Möglichkeit, zwischen De-/Komprimieren auszuwählen. |
-| 8.1  | Überprüft, ob der Benutzer die Möglichkeit hat, eine .txt Datei oder Zeichenabfolge eingeben kann, um diese dann de-/komplimieren zu lassen.             |                                                                                                                                                                             | Benutzer kann als verarbeitbare Daten Zeichenabfolgen/.txt Dateien einreichen.                    |
-| 9.1  | Überprüft, ob der Benutzer die Daten am Ende verarbeitet als .txt File zurückbekommt, um sie zu speichern.                                               |                                                                                                                                                 | Applikation gibt am Ende ein .txt FIle aus, welches abgespeichert werden kann.                    |
+| TC-№ | Beschreibung                                                                                                                                             | Vorgehen                                                                                                                                                                          | Erwartetes Ergebnis                                                                               |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| 1.1  | Überprüft, ob eine WPF-Applikation mit einer Library erfolgreich ertsellt wurde und diese im Github Repository verlinkt wurde.                           | -Projekt in Visual Studio öffnen<br/>-Im Projektmappenexplorer überprüfen, ob Library vorhanden ist<br/>-Github Repository öffnen und überprüfen, ob Projekt verlinkt wurde       | Projekt+Repository wurden erstellt und für alle Mitglieder im Repository erfolgreich verlinkt.    |
+| 2.1  | Überprüft, ob in der Library eine Klasse zur Komprimierung codiert wurde.                                                                                | -Projekt in Visual Studio öffnen<br/>-Library aufrufen<br/>-Klasse aufrufen<br/>-Code Logik überprüfen                                                                            | Klasse zur Komprimierung wurde erfolgreich erstellt und Logik implementiert.                      |
+| 3.1  | Überprüft, ob in der Library eine Klasse zur Dekomprimierung codiert wurde.                                                                              | -Projekt in Visual Studio öffnen<br/>-Library aufrufen<br/>-Klasse aufrufen<br/>-Code Logik überprüfen                                                                            | Klasse zur Dekomprimierung wurde erfolgreich erstellt und Logik implementiert.                    |
+| 4.1  | Überprüft, ob in der Library erfolgreich eine Tabelle mit den gegebenen Daten erstellt wurde, damit die Huffmann-Baumstruktur implementiert werden kann. | -Projekt in Visual Studio öffnen<br/>-Library aufrufen<br/>-Methode zur Tabellenerstellung finden<br/>-Code Logik überprüfen                                                      | Tabelle zur Huffmann-Baumstruktur wird erfolgreich erstellt beim eingeben von Daten.              |
+| 5.1  | Überprüft, ob erfolgreich eine Huffmann-Baumstruktur implementiert wurde.                                                                                | -Projekt in Visual Studio öffnen<br/>-Daten eingeben<br/>-Programm ausführen                                                                                                      | Huffmann-Baumstruktur wird erfolgreich erstellt, sobald Daten eingegeben werden.                  |
+| 6.1  | Überprüft, ob die Library erfolgreich in der WPF-Applikation eingebunden werden konnte.                                                                  | -Projekt in Visual Studio öffnen<br/>-WPF Applikation starten<br/>-Library in Code finden<br/>-Überprüfen, ob sie verbunden ist                                                   | Library wurde erfolgreich und funktionsfähig in die Applikation eingebunden.                      |
+| 7.1  | Überprüft, ob dem Benutzer in der Applikation die Möglichkeit zur Auswahl zwischen De-/Komprimierung gegeben wird.                                       | -Applikation starten<br/>-Überprüfen, ob Auswahl zur Verfügung steht<br/>-Auswahl wählen                                                                                          | Benutzer hat bei Benutzen der Applikation die Möglichkeit, zwischen De-/Komprimieren auszuwählen. |
+| 8.1  | Überprüft, ob der Benutzer die Möglichkeit hat, eine .txt Datei oder Zeichenabfolge eingeben kann, um diese dann de-/komplimieren zu lassen.             | -Applikation starten<br/>-Eingabe Feld erscheint<br/>-Überprüfen, ob Auswahl besteht zwischen .txt Datei und Zeichenabfolge                                                       | Benutzer kann als verarbeitbare Daten Zeichenabfolgen/.txt Dateien einreichen.                    |
+| 9.1  | Überprüft, ob der Benutzer die Daten am Ende verarbeitet als .txt File zurückbekommt, um sie zu speichern.                                               | -Applikation starten<br/>-Applikation komplett durchführen nach Wahl<br/>-Am Ende des Prozesses überprüfen, ob die fertig verarbeiteten Daten als .txt Datei zurückgegeben werden | Applikation gibt am Ende ein .txt FIle aus, welches abgespeichert werden kann.                    |
 
 
 
@@ -55,25 +55,27 @@ In diesem Projekt erstellen wir eine Klassenbibliothek in der Dateien mittels de
 
 ## 2 Planen
 
-| AP-№ | Frist      | Zuständig | Beschreibung                                                                                          | geplante Zeit |
-| ---- | ---------- | --------- | ----------------------------------------------------------------------------------------------------- | ------------- |
-| 1.A  | 15.03.2024 |           | Erstellen eines C# Projektes in Visual Studio, Library erstellen, erfolgreiches verlinken aus Github. | 45min         |
-|      | 15.03.2024 |           | Implementieren der Huffmann-Methode für die Komprimierung.                                            | 2h 30min      |
-|      | 15.03.2024 |           |                                                                                                       |               |
-|      | 15.03.2024 |           |                                                                                                       |               |
-|      |            |           |                                                                                                       |               |
-|      |            |           |                                                                                                       |               |
-|      |            |           |                                                                                                       |               |
-|      |            |           |                                                                                                       |               |
-|      |            |           |                                                                                                       |               |
+| AP-№ | Frist      | Zuständig       | Beschreibung                                                                     | geplante Zeit |
+| ---- | ---------- | --------------- | -------------------------------------------------------------------------------- | ------------- |
+| 1.A  | 08.03.2024 | Keanu Koelewijn | Erstellen eines C# Projektes in Visual Studio, Library+WPF-Applikation erstellen | 45min         |
+| 1.B  | 08.03.2024 | Stefan Jesenko  | Github Repository erstellen, Projekt verlinken, Teamkollegen hinzufügen          | 15min         |
+| 1.C  | 08.03.2024 | Salma Tanner    | Projekt-Dokumentation erstellen, laufend aktualisieren                           | 10min         |
+| 2.A  | 15.03.2024 |                 | Implementieren der Huffmann-Methode für die Komprimierung                        | 2h 30min      |
+| 3.A  | 15.03.2024 |                 | Implementieren der Huffmann-Methode für die Dekomprimierung                      | 2h 30min      |
+| 4.A  | 15.03.2024 |                 | Huffmann-Tabelle implementieren zur Erstellung der Baumstruktur                  | 1h 30min      |
+| 5.A  | 22.03.2024 |                 | Baumstruktur Logik implementieren                                                | 2h            |
+| 6.A  | 22.03.2024 |                 | Library korrekt in WPF-Applikation einbinden                                     | 1h            |
+| 7.A  | 22.03.2024 |                 | Benutzerfreundliche Auswahlfunktionen in Applikation einbringen                  | 1h            |
+| 8.A  | 05.04.2024 |                 | Dateneingabe implementieren (.txt)                                               | 2h            |
+| 9.A  | 05.04.2024 |                 | Datenausgabe implementieren (.txt)                                               | 1h            |
 
 
 
-Total: 
 
-✍️ Die Nummer hat das Format `N.m`, wobei `N` die Nummer der User Story ist, auf die sich das Arbeitspaket bezieht, und `m` von `A` an nach oben buchstabiert. Beispiel: Das dritte Arbeitspaket, das die zweite User Story betrifft, hat also die Nummer `2.C`.
 
-✍️ Ein Arbeitspaket sollte etwa 45' für eine Person in Anspruch nehmen. Die totale Anzahl Arbeitspakete sollte etwa Folgendem entsprechen: `Anzahl R-Sitzungen` ╳ `Anzahl Gruppenmitglieder` ╳ `4`. Wenn Sie also zu dritt an einem Projekt arbeiten, für welches zwei R-Sitzungen geplant sind, sollten Sie auf `2` ╳ `3` ╳`4` = `24` Arbeitspakete kommen. Sollten Sie merken, dass Sie hier nicht genügend Arbeitspakte haben, denken Sie sich weitere "Kann"-User Stories für Kapitel 1.2 aus.
+Total: 14,5h
+
+
 
 ## 3 Entscheiden
 
@@ -86,7 +88,7 @@ Total:
 | 1.A  |       |           |               |                   |
 | ...  |       |           |               |                   |
 
-✍️ Tragen Sie jedes Mal, wenn Sie ein Arbeitspaket abschließen, hier ein, wie lang Sie effektiv dafür hatten.
+
 
 ## 5 Kontrollieren
 
@@ -107,7 +109,3 @@ Total:
 | ...  |              |         |                   |                      |
 
 ✍️ Verwenden Sie römische Ziffern für Ihre Bug Reports, also I, II, III, IV etc.
-
-## 6 Auswerten
-
-✍️ Fügen Sie hier eine Verknüpfung zu Ihrem Lern-Bericht ein.
