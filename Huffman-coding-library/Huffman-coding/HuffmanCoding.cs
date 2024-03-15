@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
 namespace Huffman_coding
 {
@@ -6,6 +9,7 @@ namespace Huffman_coding
     {
         private Dictionary<char, string> _encodingTable;
         private HuffmanNode _root;
+        public bool ShowProtocol;
 
         public HuffmanCoding()
         {
@@ -21,9 +25,11 @@ namespace Huffman_coding
                 if (!frequencies.ContainsKey(c))
                     frequencies[c] = 0;
                 frequencies[c]++;
-
+                if (ShowProtocol)
+                {
+                    Console.WriteLine($"[HuffmanCoding] {DateTime.Now} Protocol: The Frequency of '{c}' is {frequencies[c]}");
+                }
             }
-            Console.WriteLine(frequencies);
 
             return frequencies;
         }
@@ -33,6 +39,10 @@ namespace Huffman_coding
             if (node.Left == null && node.Right == null)
             {
                 _encodingTable[node.Character] = prefix;
+                if (ShowProtocol)
+                {
+                    Console.WriteLine($"[HuffmanCoding] {DateTime.Now} Protocol: Encoding for '{node.Character}' is '{prefix}'");
+                }
                 return;
             }
 
@@ -48,7 +58,11 @@ namespace Huffman_coding
             {
                 encodedText.Append(_encodingTable[c]);
             }
-            Console.WriteLine(encodedText);
+
+            if (ShowProtocol)
+            {
+                Console.WriteLine($"[HuffmanCoding] {DateTime.Now} Protocol: The Encoded Text is '{encodedText}'");
+            }
 
             return encodedText.ToString();
         }
