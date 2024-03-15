@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.Design;
-using System.Text;
+﻿using System.Text;
 /*
   ___  ___  ___  ___  ________ ________ _____ ______   ________  ________           ________  ________  ________  ___  ________   ________
  |\  \|\  \|\  \|\  \|\  _____\\  _____\\   _ \  _   \|\   __  \|\   ___  \        |\   ____\|\   __  \|\   ___ \|\  \|\   ___  \|\   ____\
@@ -13,12 +12,18 @@ Authors: Keanu Koelewijn, Stefan Jesenko, Salma Tanner
 
 namespace Huffman_coding
 {
+    /// <summary>
+    /// Provides methods for Huffman coding, including encoding and decoding text and files.
+    /// </summary>
     public class HuffmanCoding
     {
         private Dictionary<char, string> _encodingTable;
         private HuffmanNode _root;
         public bool ShowProtocol;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HuffmanCoding"/> class.
+        /// </summary>
         public HuffmanCoding()
         {
             _encodingTable = new Dictionary<char, string>();
@@ -93,6 +98,10 @@ namespace Huffman_coding
             return decodedText.ToString();
         }
 
+        /// <summary>
+        /// Initializes the Huffman coding process with the given text.
+        /// </summary>
+        /// <param name="text">The text to be encoded/decoded.</param>
         public void Initialize(string text)
         {
             var frequencies = CalculateFrequencies(text);
@@ -100,6 +109,11 @@ namespace Huffman_coding
             BuildEncodingTable(_root, "");
         }
 
+        /// <summary>
+        /// Encodes the given text using Huffman coding.
+        /// </summary>
+        /// <param name="text">The text to be encoded.</param>
+        /// <returns>The encoded text.</returns>
         public string EncodeText(string text)
         {
             if (_encodingTable.Count == 0)
@@ -107,21 +121,35 @@ namespace Huffman_coding
             return Encode(text);
         }
 
+        /// <summary>
+        /// Encodes a text file using Huffman coding.
+        /// </summary>
+        /// <param name="filepath">The path to the text file to be encoded.</param>
+        /// <returns>The path to the encoded file.</returns>
         public string EncodeFile(string filepath)
         {
-
             using (var streamReader = new StreamReader(filepath))
             {
-
                 var text = "";
                 if (CheckFileExtension(filepath))
                 {
                     text = streamReader.ReadToEnd();
                 }
-                return EncodeText(text);
+                var encodedText = EncodeText(text);
+
+                var encodedFilePath = Path.ChangeExtension(filepath, ".hfc");
+                File.WriteAllText(encodedFilePath, encodedText);
+
+                return encodedFilePath;
             }
         }
 
+        /// <summary>
+        /// Decodes the given encoded text.
+        /// </summary>
+        /// <param name="encodedText">The text to be decoded.</param>
+        /// <param name="targetPath">The path where the decoded text will be saved.</param>
+        /// <returns>The decoded text.</returns>
         public string DecodeText(string encodedText, string targetPath)
         {
             var decodedText = Decode(encodedText);
@@ -129,11 +157,16 @@ namespace Huffman_coding
             return decodedText;
         }
 
+        /// <summary>
+        /// Decodes a file encoded with Huffman coding.
+        /// </summary>
+        /// <param name="sourcePath">The path to the encoded file.</param>
+        /// <returns>The decoded text.</returns>
         public string DecodeFile(string sourcePath)
         {
-            
+
             var encodedText = "";
-            
+
             if (Path.GetExtension(sourcePath) == ".hfc")
             {
                 using (var streamReader = new StreamReader(sourcePath))
@@ -141,7 +174,8 @@ namespace Huffman_coding
                     encodedText = streamReader.ReadToEnd();
 
                 }
-            }else
+            }
+            else
             {
                 throw new Exception("File isn't a .hfc");
             }
@@ -149,6 +183,11 @@ namespace Huffman_coding
             return Decode(encodedText);
         }
 
+        /// <summary>
+        /// Checks if the given file has a valid extension.
+        /// </summary>
+        /// <param name="filePath">The path to the file.</param>
+        /// <returns>True if the file has a valid extension, otherwise false.</returns>
         public bool CheckFileExtension(string filePath)
         {
             string[] validExtensions = { ".txt", ".json", ".yaml", ".yml", ".xml", ".csv", ".html", ".css" };
