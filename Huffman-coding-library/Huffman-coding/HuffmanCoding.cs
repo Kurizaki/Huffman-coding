@@ -98,9 +98,21 @@ namespace Huffman_coding
 
         public string EncodeFile(string filepath)
         {
+
             using (var streamReader = new StreamReader(filepath))
             {
-                var text = streamReader.ReadToEnd();
+
+                var text = "";
+                if (CheckFileExtension(filepath))
+                {
+                    text = streamReader.ReadToEnd();
+                }
+                else
+                {
+                    throw new Exception("file isn't a txt");
+                }
+
+
                 return EncodeText(text);
             }
         }
@@ -114,11 +126,42 @@ namespace Huffman_coding
 
         public string DecodeFile(string sourcePath)
         {
-            using (var streamReader = new StreamReader(sourcePath))
+            
+            var encodedText = "";
+            
+            if (CheckFileExtension(sourcePath))
             {
-                var encodedText = streamReader.ReadToEnd();
-                return Decode(encodedText);
+                using (var streamReader = new StreamReader(sourcePath))
+                {
+                    encodedText = streamReader.ReadToEnd();
+
+                }
             }
+            else
+            {
+                throw new Exception("file isn't a txt");
+            }
+
+            return Decode(encodedText);
+        }
+
+        public bool CheckFileExtension(string filePath)
+        {
+
+            bool isTxt;
+            string extension = Path.GetExtension(filePath);
+
+
+            if (extension == ".txt" || extension == ".json" || extension == ".yaml" || extension == ".yml" || extension == ".xml" || extension == ".csv" || extension == ".html" || extension == ".css")
+            {
+                isTxt = true;
+            }
+            else
+            {
+                isTxt = false;
+            }
+
+            return isTxt;
         }
     }
 }
