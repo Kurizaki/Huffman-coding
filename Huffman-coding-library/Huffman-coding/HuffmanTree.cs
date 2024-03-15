@@ -37,7 +37,7 @@
 
                 priorityQueue[mergedNode.Frequency].Add(mergedNode);
             }
-
+            Console.WriteLine(priorityQueue);
             return ExtractMin(priorityQueue);
         }
 

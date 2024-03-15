@@ -21,7 +21,9 @@ namespace Huffman_coding
                 if (!frequencies.ContainsKey(c))
                     frequencies[c] = 0;
                 frequencies[c]++;
+
             }
+            Console.WriteLine(frequencies);
 
             return frequencies;
         }
@@ -46,6 +48,7 @@ namespace Huffman_coding
             {
                 encodedText.Append(_encodingTable[c]);
             }
+            Console.WriteLine(encodedText);
 
             return encodedText.ToString();
         }
