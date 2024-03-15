@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.Text;
 
 namespace Huffman_coding
 {
@@ -29,13 +28,6 @@ namespace Huffman_coding
             return frequencies;
         }
 
-        public void Initialize(string text)
-        {
-            var frequencies = CalculateFrequencies(text);
-            _root = HuffmanTree.BuildTree(frequencies);
-            BuildEncodingTable(_root, "");
-        }
-
         private void BuildEncodingTable(HuffmanNode node, string prefix)
         {
             if (node.Left == null && node.Right == null)
@@ -48,20 +40,20 @@ namespace Huffman_coding
             BuildEncodingTable(node.Right, prefix + "1");
         }
 
-        public string EncodeText(string text)
+        private string Encode(string text)
         {
-            var encodedText = "";
+            var encodedText = new StringBuilder();
 
             foreach (var c in text)
             {
-                encodedText += _encodingTable[c];
+                encodedText.Append(_encodingTable[c]);
             }
             Console.WriteLine(encodedText);
 
-            return encodedText;
+            return encodedText.ToString();
         }
 
-        public string EncodeFile(string filepath)
+        private string Decode(string encodedText)
         {
             string extension = Path.GetExtension(filepath);
             string text = "";
@@ -83,40 +75,36 @@ namespace Huffman_coding
             return encodedText;
         }
 
+        public string EncodeText(string text)
+        {
+            if (_encodingTable.Count == 0)
+                Initialize(text);
+            return Encode(text);
+        }
+
+        public string EncodeFile(string filepath)
+        {
+            using (var streamReader = new StreamReader(filepath))
+            {
+                var text = streamReader.ReadToEnd();
+                return EncodeText(text);
+            }
+        }
+
         public string DecodeText(string encodedText, string targetPath)
         {
-            var decodedText = "";
-            var currentNode = _root;
-
-            foreach (var bit in encodedText)
-            {
-                currentNode = bit == '0' ? currentNode.Left : currentNode.Right;
-                if (currentNode.Left == null && currentNode.Right == null)
-                {
-                    decodedText += currentNode.Character;
-                    currentNode = _root;
-                }
-            }
+            var decodedText = Decode(encodedText);
             File.WriteAllText(targetPath, decodedText);
-
             return decodedText;
         }
 
         public string DecodeFile(string sourcePath)
         {
-            var encodedText = File.ReadAllText(sourcePath);
-            var decodedText = "";
-            var currentNode = _root;
-            foreach (var bit in encodedText)
+            using (var streamReader = new StreamReader(sourcePath))
             {
-                currentNode = bit == '0' ? currentNode.Left : currentNode.Right;
-                if (currentNode.Left == null && currentNode.Right == null)
-                {
-                    decodedText += currentNode.Character;
-                    currentNode = _root;
-                }
+                var encodedText = streamReader.ReadToEnd();
+                return Decode(encodedText);
             }
-            return decodedText;
         }
     }
 }
