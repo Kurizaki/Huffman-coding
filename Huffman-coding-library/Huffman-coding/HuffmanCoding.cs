@@ -63,10 +63,18 @@ namespace Huffman_coding
 
         public string EncodeFile(string filepath)
         {
-            string text = File.ReadAllText(filepath);
-
+            string extension = Path.GetExtension(filepath);
+            string text = "";
             var encodedText = "";
-
+            if (extension == ".txt")
+            {
+               text = File.ReadAllText(filepath);
+            }
+            else
+            {
+                throw new Exception("file is not a .txt");
+            }
+           
             foreach (var c in text)
             {
                 encodedText += _encodingTable[c];

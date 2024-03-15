@@ -12,10 +12,10 @@ namespace Huffman_UnitTests
         public void EncodeFileTest()
         {
             // Arrange
-            string filepath = @"C:\Users\stefa\OneDrive\Desktop\Test.txt";
+            string filepath = @"C:\Users\stefa\OneDrive\Desktop\Test.png";
             string originalText = File.ReadAllText(filepath);
             HuffmanCoding coding = new HuffmanCoding();
-            coding.Initialize(originalText); // Initialize with the content of the file
+            coding.Initialize(originalText); 
 
             // Act
             string encodedText = coding.EncodeText(originalText);
