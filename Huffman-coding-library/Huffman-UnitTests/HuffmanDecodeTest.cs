@@ -1,9 +1,7 @@
-﻿using Huffman_coding;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.IO;
+using Huffman_coding;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Huffman_UnitTests
 {
@@ -16,13 +14,13 @@ namespace Huffman_UnitTests
         public void TestDecodeFile()
         {
             // Arrange
-            var huffmanCoding = new HuffmanCoding(OriginalText);
+            var huffmanCoding = new HuffmanCoding();
+            huffmanCoding.Initialize(OriginalText); // Initialize with original text
             var encodedFilePath = Path.GetTempFileName();
-            var EncodedText = huffmanCoding.EncodeText(OriginalText);
-            File.WriteAllText(encodedFilePath, EncodedText);
+            var encodedText = huffmanCoding.EncodeText(OriginalText);
+            File.WriteAllText(encodedFilePath, encodedText);
 
             // Act
-
             var decodedText = huffmanCoding.DecodeFile(encodedFilePath);
 
             // Assert
@@ -36,7 +34,8 @@ namespace Huffman_UnitTests
         public void TestDecodeText()
         {
             // Arrange
-            var huffmanCoding = new HuffmanCoding(OriginalText);
+            var huffmanCoding = new HuffmanCoding();
+            huffmanCoding.Initialize(OriginalText); // Initialize with original text
             var encodedText = huffmanCoding.EncodeText(OriginalText);
             var targetFilePath = Path.GetTempFileName();
 

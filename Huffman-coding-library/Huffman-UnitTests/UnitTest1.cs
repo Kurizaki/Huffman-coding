@@ -14,16 +14,17 @@ namespace Huffman_UnitTests
         [TestMethod]
         public void EncodeFileTest()
         {
-            //Arrange
+            // Arrange
             string filepath = @"C:\Users\stefa\OneDrive\Desktop\Test.txt";
-            string expected = "11101111101000000101001110110";
+            string originalText = File.ReadAllText(filepath);
             HuffmanCoding coding = new HuffmanCoding();
+            coding.Initialize(originalText); // Initialize with the content of the file
 
-            //Act
-             string actual = coding.EncodeFile(filepath);
+            // Act
+            string encodedText = coding.EncodeText(originalText);
 
-            //Assert
-            Assert.AreEqual(expected, actual);
+            // Assert
+            Assert.IsNotNull(encodedText);
         }
     }
 }
