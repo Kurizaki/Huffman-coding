@@ -69,24 +69,27 @@ namespace Huffman_coding
 
         private string Decode(string encodedText)
         {
-            string extension = Path.GetExtension(filepath);
-            string text = "";
-            var encodedText = "";
-            if (extension == ".txt")
+            var decodedText = new StringBuilder();
+            var currentNode = _root;
+
+            foreach (var bit in encodedText)
             {
-               text = File.ReadAllText(filepath);
+                currentNode = bit == '0' ? currentNode.Left : currentNode.Right;
+                if (currentNode.Left == null && currentNode.Right == null)
+                {
+                    decodedText.Append(currentNode.Character);
+                    currentNode = _root;
+                }
             }
-            else
-            {
-                throw new Exception("file is not a .txt");
-            }
-           
-            foreach (var c in text)
-            {
-                encodedText += _encodingTable[c];
-            }
-            Console.WriteLine(encodedText);
-            return encodedText;
+
+            return decodedText.ToString();
+        }
+
+        public void Initialize(string text)
+        {
+            var frequencies = CalculateFrequencies(text);
+            _root = HuffmanTree.BuildTree(frequencies);
+            BuildEncodingTable(_root, "");
         }
 
         public string EncodeText(string text)
@@ -98,9 +101,21 @@ namespace Huffman_coding
 
         public string EncodeFile(string filepath)
         {
+
             using (var streamReader = new StreamReader(filepath))
             {
-                var text = streamReader.ReadToEnd();
+
+                var text = "";
+                if (CheckFileExtension(filepath))
+                {
+                    text = streamReader.ReadToEnd();
+                }
+                else
+                {
+                    throw new Exception("file isn't a txt");
+                }
+
+
                 return EncodeText(text);
             }
         }
@@ -114,11 +129,42 @@ namespace Huffman_coding
 
         public string DecodeFile(string sourcePath)
         {
-            using (var streamReader = new StreamReader(sourcePath))
+            
+            var encodedText = "";
+            
+            if (CheckFileExtension(sourcePath))
             {
-                var encodedText = streamReader.ReadToEnd();
-                return Decode(encodedText);
+                using (var streamReader = new StreamReader(sourcePath))
+                {
+                    encodedText = streamReader.ReadToEnd();
+
+                }
             }
+            else
+            {
+                throw new Exception("file isn't a txt");
+            }
+
+            return Decode(encodedText);
+        }
+
+        public bool CheckFileExtension(string filePath)
+        {
+
+            bool isTxt;
+            string extension = Path.GetExtension(filePath);
+
+
+            if (extension == ".txt" || extension == ".json" || extension == ".yaml" || extension == ".yml" || extension == ".xml" || extension == ".csv" || extension == ".html" || extension == ".css")
+            {
+                isTxt = true;
+            }
+            else
+            {
+                isTxt = false;
+            }
+
+            return isTxt;
         }
     }
 }
