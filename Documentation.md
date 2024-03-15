@@ -1,14 +1,14 @@
 # Projekt-Dokumentation
 
-Salma Tanner & Keanu Koelewijn
+Salma Tanner & Keanu Koelewijn & Stefan Jesenko
 
 | Datum      | Version | Zusammenfassung                                                                     |
 | ---------- | ------- | ----------------------------------------------------------------------------------- |
 | 01.03.2024 | 0.0.1   | Erstellen des Projektes, Projektdokumentation, Informieren/Planen                   |
 | 08.03.2024 | 0.0.2   | Fertigstellen der Planung, Aufteilen des Projektes, wichtige Entscheidungen treffen |
-| 15.03.2024 | 0.0.3   | Beginn mit Realisieren des Projektes                                                |
-| 22.03.2024 | 0.0.4   | Realisieren fortsetzen                                                              |
-| 05.04.2024 | 0.0.5   | Realisieren abschliessen                                                            |
+| 15.03.2024 | 0.0.3   | Beginn mit Realisieren des Projektes, Projektdokumentation aktualisieren            |
+| 22.03.2024 | 0.0.4   | Realisieren fortsetzen, Projektdokumentation                                        |
+| 05.04.2024 | 0.0.5   | Realisieren abschliessen, Testen/Kontrolieren, Projektdokumentation aktualisieren   |
 | 26.04.2024 | 0.0.6   | Portfolioeintrag erstellen / Projekt abschliessen                                   |
 
 ## 1 Informieren
@@ -25,7 +25,7 @@ In diesem Projekt erstellen wir eine Klassenbibliothek in der Dateien mittels de
 | 2    | Muss            | Funktional | Als ein Entwickler möchte ich in meiner Library eine Klasse zur Komprimierung codieren, damit der Benutzer Daten komprimieren kann.                                                                                  |
 | 3    | Muss            | Funktional | Als Entwickler möchte ich in meiner Library eine Klasse zur Dekomprimierung codieren, damit der Benutzer Daten dekomprimieren kann.                                                                                  |
 | 4    | Muss            | Funktional | Als ein Entwickler möchte ich die Huffmann-Tabelle für die De- und Komprimierung erstellen, damit die Baumstruktur erfolgreich erstellt werden kann.                                                                 |
-| 5    | Muss            | Funktional | Als Entwickler möchte ich aus den erhaltenen Daten eine Huffman-Baumstruktur codieren, damit die De- und Komprimierung erfolgreich durchgeführt werden kann.                                                         |
+| 5    | Muss            | Funktional | Als Entwickler möchte ich aus den erhaltenen Daten eine Huffman-Baumstruktur codieren, damit die De- und Komprimierung erfolgreich durchgeführt werden kann.                             |
 | 6    | Muss            | Funktional | Als Enwtickler möchte ich die Library in meiner WPF Applikation erfolgreich einbinden können, damit ich das De- und Komprimierung Verfahren benutzerfreundlich darstellen kann.                                      |
 | 7    | Muss            | Funktional | Als ein Benutzer möchte ich in der Applikation auswählen, ob ich De- oder Komprimieren möchte, damit ich meine Daten verarbeiten kann.                                                                               |
 | 8    | Muss            | Funktional | Als ein Benutzer möchte ich eine .txt Datei auswählen oder Zeichenabfolge (Buchstaben) eingeben können, damit diese dann de/komprimiert werden kann.                                                                 |
@@ -38,7 +38,7 @@ In diesem Projekt erstellen wir eine Klassenbibliothek in der Dateien mittels de
 | TC-№ | Beschreibung                                                                                                                                             | Vorgehen                                                                                                                                                                          | Erwartetes Ergebnis                                                                               |
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | 1.1  | Überprüft, ob eine WPF-Applikation mit einer Library erfolgreich ertsellt wurde und diese im Github Repository verlinkt wurde.                           | -Projekt in Visual Studio öffnen<br/>-Im Projektmappenexplorer überprüfen, ob Library vorhanden ist<br/>-Github Repository öffnen und überprüfen, ob Projekt verlinkt wurde       | Projekt+Repository wurden erstellt und für alle Mitglieder im Repository erfolgreich verlinkt.    |
-| 2.1  | Überprüft, ob in der Library eine Klasse zur Komprimierung codiert wurde.                                                                                | -Projekt in Visual Studio öffnen<br/>-Library aufrufen<br/>-Klasse aufrufen<br/>-Code Logik überprüfen                                                                            | Klasse zur Komprimierung wurde erfolgreich erstellt und Logik implementiert.                      |
+| 2.1  | Überprüft, ob in der Library eine Klasse zur Komprimierung codiert wurde.                                                                                | -Projekt in Visual Studio öffnen<br/>-Library aufrufen<br/>-Klasse aufrufen <br/>-Code Logik überprüfen                                                                           | Klasse zur Komprimierung wurde erfolgreich erstellt und Logik implementiert.                      |
 | 3.1  | Überprüft, ob in der Library eine Klasse zur Dekomprimierung codiert wurde.                                                                              | -Projekt in Visual Studio öffnen<br/>-Library aufrufen<br/>-Klasse aufrufen<br/>-Code Logik überprüfen                                                                            | Klasse zur Dekomprimierung wurde erfolgreich erstellt und Logik implementiert.                    |
 | 4.1  | Überprüft, ob in der Library erfolgreich eine Tabelle mit den gegebenen Daten erstellt wurde, damit die Huffmann-Baumstruktur implementiert werden kann. | -Projekt in Visual Studio öffnen<br/>-Library aufrufen<br/>-Methode zur Tabellenerstellung finden<br/>-Code Logik überprüfen                                                      | Tabelle zur Huffmann-Baumstruktur wird erfolgreich erstellt beim eingeben von Daten.              |
 | 5.1  | Überprüft, ob erfolgreich eine Huffmann-Baumstruktur implementiert wurde.                                                                                | -Projekt in Visual Studio öffnen<br/>-Daten eingeben<br/>-Programm ausführen                                                                                                      | Huffmann-Baumstruktur wird erfolgreich erstellt, sobald Daten eingegeben werden.                  |
