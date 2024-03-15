@@ -1,4 +1,15 @@
-﻿using System.Text;
+﻿using System.ComponentModel.Design;
+using System.Text;
+/*
+  ___  ___  ___  ___  ________ ________ _____ ______   ________  ________           ________  ________  ________  ___  ________   ________
+ |\  \|\  \|\  \|\  \|\  _____\\  _____\\   _ \  _   \|\   __  \|\   ___  \        |\   ____\|\   __  \|\   ___ \|\  \|\   ___  \|\   ____\
+ \ \  \\\  \ \  \\\  \ \  \__/\ \  \__/\ \  \\\__\ \  \ \  \|\  \ \  \\ \  \       \ \  \___|\ \  \|\  \ \  \_|\ \ \  \ \  \\ \  \ \  \___|
+  \ \   __  \ \  \\\  \ \   __\\ \   __\\ \  \\|__| \  \ \   __  \ \  \\ \  \       \ \  \    \ \  \\\  \ \  \ \\ \ \  \ \  \\ \  \ \  \  ___
+   \ \  \ \  \ \  \\\  \ \  \_| \ \  \_| \ \  \    \ \  \ \  \ \  \ \  \\ \  \       \ \  \____\ \  \\\  \ \  \_\\ \ \  \ \  \\ \  \ \  \|\  \
+    \ \__\ \__\ \_______\ \__\   \ \__\   \ \__\    \ \__\ \__\ \__\ \__\\ \__\       \ \_______\ \_______\ \_______\ \__\ \__\\ \__\ \_______\
+     \|__|\|__|\|_______|\|__|    \|__|    \|__|     \|__|\|__|\|__|\|__| \|__|        \|_______|\|_______|\|_______|\|__|\|__| \|__|\|_______|
+Authors: Keanu Koelewijn, Stefan Jesenko, Salma Tanner
+*/
 
 namespace Huffman_coding
 {
@@ -107,12 +118,6 @@ namespace Huffman_coding
                 {
                     text = streamReader.ReadToEnd();
                 }
-                else
-                {
-                    throw new Exception("file isn't a txt");
-                }
-
-
                 return EncodeText(text);
             }
         }
@@ -129,17 +134,16 @@ namespace Huffman_coding
             
             var encodedText = "";
             
-            if (CheckFileExtension(sourcePath))
+            if (Path.GetExtension(sourcePath) == ".hfc")
             {
                 using (var streamReader = new StreamReader(sourcePath))
                 {
                     encodedText = streamReader.ReadToEnd();
 
                 }
-            }
-            else
+            }else
             {
-                throw new Exception("file isn't a txt");
+                throw new Exception("File isn't a .hfc");
             }
 
             return Decode(encodedText);
@@ -147,21 +151,16 @@ namespace Huffman_coding
 
         public bool CheckFileExtension(string filePath)
         {
-
-            bool isTxt;
+            string[] validExtensions = { ".txt", ".json", ".yaml", ".yml", ".xml", ".csv", ".html", ".css" };
             string extension = Path.GetExtension(filePath);
+            bool isValidExtension = Array.Exists(validExtensions, ext => ext.Equals(extension, StringComparison.OrdinalIgnoreCase));
 
-
-            if (extension == ".txt" || extension == ".json" || extension == ".yaml" || extension == ".yml" || extension == ".xml" || extension == ".csv" || extension == ".html" || extension == ".css")
+            if (!isValidExtension)
             {
-                isTxt = true;
-            }
-            else
-            {
-                isTxt = false;
+                throw new Exception("File isn't a .txt, .json, .yaml, .yml, .xml, .csv, .html, or .css");
             }
 
-            return isTxt;
+            return isValidExtension;
         }
     }
 }
