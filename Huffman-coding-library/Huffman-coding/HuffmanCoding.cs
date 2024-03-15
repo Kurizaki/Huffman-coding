@@ -1,16 +1,16 @@
-﻿using System.IO;
-using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
+using System.IO;
+
 namespace Huffman_coding
 {
     public class HuffmanCoding
     {
-        private Dictionary<char, string> _encodingTable = new Dictionary<char, string>();
+        private Dictionary<char, string> _encodingTable;
         private HuffmanNode _root;
 
         public HuffmanCoding()
         {
-
-            Initilaize();
+            _encodingTable = new Dictionary<char, string>();
         }
 
         private Dictionary<char, int> CalculateFrequencies(string text)
@@ -22,19 +22,20 @@ namespace Huffman_coding
                 if (!frequencies.ContainsKey(c))
                     frequencies[c] = 0;
                 frequencies[c]++;
+
             }
+            Console.WriteLine(frequencies);
 
             return frequencies;
         }
 
-        public void Initilaize()
+        public void Initialize(string text)
         {
-            var text = "default text";
             var frequencies = CalculateFrequencies(text);
             _root = HuffmanTree.BuildTree(frequencies);
             BuildEncodingTable(_root, "");
-
         }
+
         private void BuildEncodingTable(HuffmanNode node, string prefix)
         {
             if (node.Left == null && node.Right == null)
@@ -55,10 +56,10 @@ namespace Huffman_coding
             {
                 encodedText += _encodingTable[c];
             }
+            Console.WriteLine(encodedText);
 
             return encodedText;
         }
-        
 
         public string EncodeFile(string filepath)
         {
@@ -70,7 +71,7 @@ namespace Huffman_coding
             {
                 encodedText += _encodingTable[c];
             }
-
+            Console.WriteLine(encodedText);
             return encodedText;
         }
 
@@ -110,5 +111,4 @@ namespace Huffman_coding
             return decodedText;
         }
     }
-
 }
