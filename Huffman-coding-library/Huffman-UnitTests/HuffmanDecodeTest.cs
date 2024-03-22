@@ -35,12 +35,10 @@ namespace Huffman_UnitTests
             var targetFilePath = Path.GetTempFileName();
 
             // Act
-            var decodedText = huffmanCoding.DecodeText(encodedText, targetFilePath);
-            var decodedFromFile = File.ReadAllText(targetFilePath);
+            var decodedText = huffmanCoding.DecodeText(encodedText);
 
             // Assert
             Assert.AreEqual(OriginalText, decodedText);
-            Assert.AreEqual(OriginalText, decodedFromFile);
 
             // Clean up
             File.Delete(targetFilePath);

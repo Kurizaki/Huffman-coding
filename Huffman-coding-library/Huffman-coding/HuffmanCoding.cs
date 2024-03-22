@@ -150,10 +150,9 @@ namespace Huffman_coding
         /// <param name="encodedText">The text to be decoded.</param>
         /// <param name="targetPath">The path where the decoded text will be saved.</param>
         /// <returns>The decoded text.</returns>
-        public string DecodeText(string encodedText, string targetPath)
+        public string DecodeText(string encodedText)
         {
             var decodedText = Decode(encodedText);
-            File.WriteAllText(targetPath, decodedText);
             return decodedText;
         }
 

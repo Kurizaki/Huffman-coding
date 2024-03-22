@@ -46,7 +46,7 @@ namespace Huffman_UnitTests
 
             // Act
             string encodedText = huffmanCoding.EncodeText(OriginalText);
-            string decodedText = huffmanCoding.DecodeText(encodedText, Path.GetTempFileName());
+            string decodedText = huffmanCoding.DecodeText(encodedText);
 
             // Assert
             Assert.AreEqual(OriginalText, decodedText);
