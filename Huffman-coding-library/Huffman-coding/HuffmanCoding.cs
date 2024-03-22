@@ -88,9 +88,9 @@ namespace Huffman_coding
             foreach (var bit in encodedText)
             {
                 currentNode = bit == '0' ? currentNode.Left : currentNode.Right;
-                if (currentNode.Left == null && currentNode.Right == null)
+                if (currentNode?.Left == null && currentNode?.Right == null)
                 {
-                    decodedText.Append(currentNode.Character);
+                    decodedText.Append(currentNode?.Character);
                     currentNode = _root;
                 }
             }
@@ -165,7 +165,7 @@ namespace Huffman_coding
         public string DecodeFile(string sourcePath)
         {
 
-            var encodedText = "";
+            string encodedText;
 
             if (Path.GetExtension(sourcePath) == ".hfc")
             {

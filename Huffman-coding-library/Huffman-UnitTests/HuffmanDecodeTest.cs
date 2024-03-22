@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using Huffman_coding;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Huffman_coding;
 
 namespace Huffman_UnitTests
 {

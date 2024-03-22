@@ -20,7 +20,7 @@ namespace Huffman_UnitTests
 
                 // Act
                 string encodedTextFilePath = huffmanCoding.EncodeFile(encodedFilePath);
-                string encodedText = File.ReadAllText(encodedTextFilePath);
+                File.ReadAllText(encodedTextFilePath);
                 string decodedText = huffmanCoding.DecodeFile(encodedTextFilePath);
 
                 // Assert
@@ -36,6 +36,20 @@ namespace Huffman_UnitTests
 
             // Ensure that all extensions have been tested
             Assert.AreEqual(0, extensions.Count);
+        }
+
+        [TestMethod]
+        public void EncodeDecodeTextTest()
+        {
+            // Arrange
+            var huffmanCoding = new HuffmanCoding();
+
+            // Act
+            string encodedText = huffmanCoding.EncodeText(OriginalText);
+            string decodedText = huffmanCoding.DecodeText(encodedText, Path.GetTempFileName());
+
+            // Assert
+            Assert.AreEqual(OriginalText, decodedText);
         }
     }
 }

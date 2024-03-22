@@ -1,8 +1,4 @@
 using Huffman_coding;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Huffman_UnitTests
 {
@@ -16,7 +12,7 @@ namespace Huffman_UnitTests
         {
             var extensions = new List<string> { ".txt", ".json", ".yaml", ".yml", ".xml", ".csv", ".html", ".css" };
 
-            foreach (var extension in extensions.ToArray()) // ToArray() is used to create a copy of the list to avoid modification during iteration
+            foreach (var extension in extensions.ToArray())
             {
                 // Arrange
                 var huffmanCoding = new HuffmanCoding();
@@ -25,7 +21,7 @@ namespace Huffman_UnitTests
 
                 // Act
                 string encodedTextFilePath = huffmanCoding.EncodeFile(encodedFilePath);
-                string encodedText = File.ReadAllText(encodedTextFilePath);
+                File.ReadAllText(encodedTextFilePath);
 
                 // Assert
                 Assert.AreEqual(OriginalText, huffmanCoding.DecodeFile(encodedTextFilePath));
