@@ -73,4 +73,6 @@ Here, Huffman coding is employed to decode previously encoded text. First, an in
 
 This project is licensed under the Beerware License - see the [LICENSE](https://github.com/Kurizaki/Huffman-coding/tree/master?tab=License-1-ov-file) file for details.
 
-These explanations provide a clear understanding of each code snippet's purpose and how it contributes to utilizing Huffman coding functionalities provided by the library.
+## Feedback
+
+Hey, this is our first package! We would greatly appreciate your feedback. Please fill out our feedback form [here](https://forms.gle/1RfxMtdsrHkr6e2D8).
