@@ -22,9 +22,9 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>compression, Huffman coding, text encoding, file encoding, data compression, file manipulation, algorithm, encoding, decoding, text processing, utility, file extension, protocol logging, debugging, monitoring</PackageTags>
     <PackageReadmeFile>Huffman-Coding.md</PackageReadmeFile>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <FileVersion>1.0.0.1</FileVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

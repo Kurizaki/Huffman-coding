@@ -1,0 +1,28 @@
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\bin\Debug\net8.0-windows\Huffman Coding Demo.exe
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\bin\Debug\net8.0-windows\Huffman Coding Demo.deps.json
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\bin\Debug\net8.0-windows\Huffman Coding Demo.runtimeconfig.json
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\bin\Debug\net8.0-windows\Huffman Coding Demo.dll
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\bin\Debug\net8.0-windows\Huffman Coding Demo.pdb
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\bin\Debug\net8.0-windows\Huffman-coding.dll
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo.csproj.AssemblyReference.cache
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\EncodeDecodeFile.g.cs
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\EncodeDecodeText.g.cs
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo_MarkupCompile.cache
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo_MarkupCompile.lref
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\EncodeDecodeFile.baml
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\EncodeDecodeText.baml
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo.g.resources
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo.AssemblyInfoInputs.cache
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo.AssemblyInfo.cs
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo.csproj.CoreCompileInputs.cache
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo.sourcelink.json
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman .5FA0158A.Up2Date
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo.dll
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\refint\Huffman Coding Demo.dll
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo.pdb
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\Huffman Coding Demo.genruntimeconfig.cache
+C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\obj\Debug\net8.0-windows\ref\Huffman Coding Demo.dll

@@ -9,10 +9,13 @@
     <Grid>
         <TextBlock Text="Huffman Coding" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="48" FontStyle="Italic" Margin="0,20,0,0" Foreground="White"/>
         <TextBlock Text="by Keanu Koelewijn, Stefan Jesenko, Salma Tanner" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="13" Margin="0,80,0,0" Foreground="White"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,120,0,0">
-            <Button Content="Import File" Margin="0,0,10,0"/>
-            <Button Content="Insert Text"/>
-            <Image Source="C:\Users\keanu\Downloads\github-mark-c791e9551fe4\github-mark\github-mark-white.png" Width="20" Height="20" Margin="10,0,0,0"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="295,118,0,0" RenderTransformOrigin="0.373,0.684">
+            <Button x:Name="importFileButton" Content="Import File" Margin="0,0,10,0" Width="100" Height="40" Background="#007ACC" Foreground="White" FontWeight="Bold" FontSize="16" Click="ImportFileButton_Click"/>
+            <Button x:Name="insertTextButton" Content="Insert Text" Width="100" Height="40" Background="#007ACC" Foreground="White" FontWeight="Bold" FontSize="16" Click="InsertTextButton_Click"/>
+            <Button x:Name="githubButton" Width="20" Height="20" Margin="10,0,0,0" Click="GithubButton_Click">
+                <Image Source="C:\Users\keanu\Downloads\github-mark-c791e9551fe4\github-mark\github-mark-white.png"/>
+            </Button>
         </StackPanel>
     </Grid>
+
 </Window>

@@ -69,6 +69,8 @@ namespace Huffman_coding
 
             foreach (var c in text)
             {
+                if (!_encodingTable.ContainsKey(c))
+                    throw new InvalidOperationException($"Character '{c}' not found in encoding table.");
                 encodedText.Append(_encodingTable[c]);
             }
 
@@ -87,6 +89,9 @@ namespace Huffman_coding
 
             foreach (var bit in encodedText)
             {
+                if (currentNode == null)
+                    throw new InvalidOperationException("Invalid Huffman encoding.");
+
                 currentNode = bit == '0' ? currentNode.Left : currentNode.Right;
                 if (currentNode?.Left == null && currentNode?.Right == null)
                 {
@@ -104,6 +109,9 @@ namespace Huffman_coding
         /// <param name="text">The text to be encoded/decoded.</param>
         public void Initialize(string text)
         {
+            if (string.IsNullOrWhiteSpace(text))
+                throw new ArgumentException("Text cannot be null or empty.", nameof(text));
+
             var frequencies = CalculateFrequencies(text);
             _root = HuffmanTree.BuildTree(frequencies);
             BuildEncodingTable(_root, "");
@@ -116,6 +124,9 @@ namespace Huffman_coding
         /// <returns>The encoded text.</returns>
         public string EncodeText(string text)
         {
+            if (string.IsNullOrWhiteSpace(text))
+                throw new ArgumentException("Text cannot be null or empty.", nameof(text));
+
             if (_encodingTable.Count == 0)
                 Initialize(text);
             return Encode(text);
@@ -128,13 +139,18 @@ namespace Huffman_coding
         /// <returns>The path to the encoded file.</returns>
         public string EncodeFile(string filepath)
         {
+            if (string.IsNullOrWhiteSpace(filepath))
+                throw new ArgumentException("Filepath cannot be null or empty.", nameof(filepath));
+
+            if (!File.Exists(filepath))
+                throw new FileNotFoundException("File not found.", filepath);
+
+            if (!CheckFileExtension(filepath))
+                throw new InvalidOperationException("File extension is not supported for encoding.");
+
             using (var streamReader = new StreamReader(filepath))
             {
-                var text = "";
-                if (CheckFileExtension(filepath))
-                {
-                    text = streamReader.ReadToEnd();
-                }
+                var text = streamReader.ReadToEnd();
                 var encodedText = EncodeText(text);
 
                 var encodedFilePath = Path.ChangeExtension(filepath, ".hfc");
@@ -148,12 +164,13 @@ namespace Huffman_coding
         /// Decodes the given encoded text.
         /// </summary>
         /// <param name="encodedText">The text to be decoded.</param>
-        /// <param name="targetPath">The path where the decoded text will be saved.</param>
         /// <returns>The decoded text.</returns>
         public string DecodeText(string encodedText)
         {
-            var decodedText = Decode(encodedText);
-            return decodedText;
+            if (string.IsNullOrWhiteSpace(encodedText))
+                throw new ArgumentException("Encoded text cannot be null or empty.", nameof(encodedText));
+
+            return Decode(encodedText);
         }
 
         /// <summary>
@@ -163,6 +180,11 @@ namespace Huffman_coding
         /// <returns>The decoded text.</returns>
         public string DecodeFile(string sourcePath)
         {
+            if (string.IsNullOrWhiteSpace(sourcePath))
+                throw new ArgumentException("Source path cannot be null or empty.", nameof(sourcePath));
+
+            if (!File.Exists(sourcePath))
+                throw new FileNotFoundException("File not found.", sourcePath);
 
             string encodedText;
 
@@ -171,12 +193,11 @@ namespace Huffman_coding
                 using (var streamReader = new StreamReader(sourcePath))
                 {
                     encodedText = streamReader.ReadToEnd();
-
                 }
             }
             else
             {
-                throw new Exception("File isn't a .hfc");
+                throw new InvalidOperationException("File format is not supported for decoding.");
             }
 
             return Decode(encodedText);
@@ -189,13 +210,16 @@ namespace Huffman_coding
         /// <returns>True if the file has a valid extension, otherwise false.</returns>
         public bool CheckFileExtension(string filePath)
         {
+            if (string.IsNullOrWhiteSpace(filePath))
+                throw new ArgumentException("Filepath cannot be null or empty.", nameof(filePath));
+
             string[] validExtensions = { ".txt", ".json", ".yaml", ".yml", ".xml", ".csv", ".html", ".css" };
             string extension = Path.GetExtension(filePath);
             bool isValidExtension = Array.Exists(validExtensions, ext => ext.Equals(extension, StringComparison.OrdinalIgnoreCase));
 
             if (!isValidExtension)
             {
-                throw new Exception("File isn't a .txt, .json, .yaml, .yml, .xml, .csv, .html, or .css");
+                throw new InvalidOperationException("File extension is not supported.");
             }
 
             return isValidExtension;

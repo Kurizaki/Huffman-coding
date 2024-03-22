@@ -28,6 +28,9 @@ namespace Huffman_coding
         /// <returns>The root node of the Huffman tree.</returns>
         public static HuffmanNode BuildTree(Dictionary<char, int> frequencies)
         {
+            if (frequencies == null || frequencies.Count == 0)
+                throw new ArgumentException("Character frequencies dictionary cannot be null or empty.", nameof(frequencies));
+
             // Represents a priority queue implemented as a sorted dictionary.
             var priorityQueue = new SortedDictionary<int, List<HuffmanNode>>();
 
@@ -81,6 +84,9 @@ namespace Huffman_coding
         /// <returns>The node with the minimum frequency.</returns>
         private static HuffmanNode ExtractMin(SortedDictionary<int, List<HuffmanNode>> queue)
         {
+            if (queue == null || queue.Count == 0)
+                throw new InvalidOperationException("Priority queue is null or empty.");
+
             var minFrequency = queue.First().Key;
             var minNode = queue[minFrequency][0];
             queue[minFrequency].RemoveAt(0);

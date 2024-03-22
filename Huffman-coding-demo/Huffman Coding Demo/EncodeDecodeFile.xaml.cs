@@ -18,7 +18,7 @@ namespace Huffman_Coding_Demo
     /// <summary>
     /// Interaktionslogik für EncodeDecodeFile.xaml
     /// </summary>
-    public partial class EncodeDecodeFile : Page
+    public partial class EncodeDecodeFile
     {
         public EncodeDecodeFile()
         {

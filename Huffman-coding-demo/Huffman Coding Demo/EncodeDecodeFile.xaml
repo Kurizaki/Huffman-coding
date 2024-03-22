@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:Huffman_Coding_Demo"
         mc:Ignorable="d"
         Title="Huffman Coding" Height="450" Width="800" Background="#333333">
-    <Grid>
+    <Grid Height="434" VerticalAlignment="Bottom">
         <TextBlock Text="Huffman Coding" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="48" FontStyle="Italic" Margin="0,20,0,0" Foreground="White"/>
         <TextBlock Text="by Keanu Koelewijn, Stefan Jesenko, Salma Tanner" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="13" Margin="0,80,0,0" Foreground="White"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,120,0,0">
-            <Button Content="Encrypt" Margin="0,0,10,0"/>
-            <Button Content="Decrypt"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="295,118,0,0" RenderTransformOrigin="0.373,0.684">
+            <Button Content="Encrypt" Margin="0,0,10,0" Width="100" Height="40" Background="#007ACC" Foreground="White" FontWeight="Bold" FontSize="16"/>
+            <Button Content="Decrypt" Width="100" Height="40" Background="#007ACC" Foreground="White" FontWeight="Bold" FontSize="16"/>
             <Image Source="C:\Users\keanu\Downloads\github-mark-c791e9551fe4\github-mark\github-mark-white.png" Width="20" Height="20" Margin="10,0,0,0"/>
         </StackPanel>
-        <Button Content="Choose File" MaxHeight="20" MaxWidth="80"/>
+        <Button Content="Choose File" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,197,0,0" Width="100" Height="30" Background="#555555" Foreground="White" BorderBrush="#555555" BorderThickness="1"/>
     </Grid>
 </Window>

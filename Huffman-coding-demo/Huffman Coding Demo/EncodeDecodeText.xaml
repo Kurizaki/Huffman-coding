@@ -1,19 +1,17 @@
 ﻿<Window x:Class="Huffman_Coding_Demo.EncodeDecodeText"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Huffman_Coding_Demo"
-        mc:Ignorable="d"
         Title="Huffman Coding" Height="450" Width="800" Background="#333333">
     <Grid>
         <TextBlock Text="Huffman Coding" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="48" FontStyle="Italic" Margin="0,20,0,0" Foreground="White"/>
         <TextBlock Text="by Keanu Koelewijn, Stefan Jesenko, Salma Tanner" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="13" Margin="0,80,0,0" Foreground="White"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,120,0,0">
-            <Button Content="Encrypt" Margin="0,0,10,0"/>
-            <Button Content="Decrypt"/>
-            <Image Source="C:\Users\keanu\Downloads\github-mark-c791e9551fe4\github-mark\github-mark-white.png" Width="20" Height="20" Margin="10,0,0,0"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="295,118,0,0" RenderTransformOrigin="0.373,0.684">
+            <Button x:Name="encryptButton" Content="Encrypt" Click="EncryptButton_Click" Margin="0,0,10,0" Width="100" Height="40" Background="#007ACC" Foreground="White" FontWeight="Bold" FontSize="16"/>
+            <Button x:Name="decryptButton" Content="Decrypt" Click="DecryptButton_Click" Margin="10,0,0,0" Width="100" Height="40" Background="#007ACC" Foreground="White" FontWeight="Bold" FontSize="16"/>
+            <Button x:Name="githubButton" Width="20" Height="20" Margin="10,0,0,0" Click="GithubButton_Click">
+                <Image Source="C:\Users\keanu\Downloads\github-mark-c791e9551fe4\github-mark\github-mark-white.png"/>
+            </Button>
         </StackPanel>
-        <TextBox Text="Type something here..." HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,160,0,0" Width="200" Height="30" Background="#555555" Foreground="White" BorderBrush="#555555" BorderThickness="1" />
+        <TextBox x:Name="textBox" Text="Type something here..." HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0" Width="400" Height="100" Background="#555555" Foreground="White" BorderBrush="#555555" BorderThickness="1" />
     </Grid>
 </Window>
