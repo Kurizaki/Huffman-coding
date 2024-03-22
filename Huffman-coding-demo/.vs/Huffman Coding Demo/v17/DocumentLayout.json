@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\keanu\\source\\repos\\Kurizaki\\Huffman-coding\\Huffman-coding-demo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{43C6C3D2-1A43-4F61-9344-F7760B0327BC}|Huffman Coding Demo\\Huffman Coding Demo.csproj|c:\\users\\keanu\\source\\repos\\kurizaki\\huffman-coding\\huffman-coding-demo\\huffman coding demo\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{43C6C3D2-1A43-4F61-9344-F7760B0327BC}|Huffman Coding Demo\\Huffman Coding Demo.csproj|solutionrelative:huffman coding demo\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43C6C3D2-1A43-4F61-9344-F7760B0327BC}|Huffman Coding Demo\\Huffman Coding Demo.csproj|c:\\users\\keanu\\source\\repos\\kurizaki\\huffman-coding\\huffman-coding-demo\\huffman coding demo\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43C6C3D2-1A43-4F61-9344-F7760B0327BC}|Huffman Coding Demo\\Huffman Coding Demo.csproj|solutionrelative:huffman coding demo\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\keanu\\source\\repos\\Kurizaki\\Huffman-coding\\Huffman-coding-demo\\Huffman Coding Demo\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Huffman Coding Demo\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\keanu\\source\\repos\\Kurizaki\\Huffman-coding\\Huffman-coding-demo\\Huffman Coding Demo\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Huffman Coding Demo\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T09:44:35.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{905da7d1-18fd-4a46-8d0f-a5ff58ada9de}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\keanu\\source\\repos\\Kurizaki\\Huffman-coding\\Huffman-coding-demo\\Huffman Coding Demo\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Huffman Coding Demo\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\keanu\\source\\repos\\Kurizaki\\Huffman-coding\\Huffman-coding-demo\\Huffman Coding Demo\\MainWindow.xaml",
+              "RelativeToolTip": "Huffman Coding Demo\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-22T09:42:57.849Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

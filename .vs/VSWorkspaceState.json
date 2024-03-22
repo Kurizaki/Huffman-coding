@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Huffman-coding-library",
-    "\\Huffman-coding-library\\Huffman-coding",
-    "\\Huffman-coding-library\\Huffman-UnitTests"
+    "\\Huffman-coding-demo"
   ],
-  "SelectedNode": "\\Huffman-coding-library\\Huffman-coding.sln",
+  "SelectedNode": "\\Huffman-coding-demo\\Huffman Coding Demo.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -21,9 +21,17 @@
     <RepositoryUrl>https://github.com/Kurizaki/Huffman-coding/tree/master</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>compression, Huffman coding, text encoding, file encoding, data compression, file manipulation, algorithm, encoding, decoding, text processing, utility, file extension, protocol logging, debugging, monitoring</PackageTags>
+    <PackageReadmeFile>Huffman-Coding.md</PackageReadmeFile>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\..\..\..\..\Desktop\Huffman-Coding.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\..\..\..\..\..\Desktop\Screenshot 2024-03-22 091926.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "cmpWUwYDBgSaBhs0Y+1tyQwxtLxH1K4Zuq4VXhFJG63q5p/TXic69q08FCKIsEWNiIfFZATCVu9hZskxAJHf3A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\keanu\\Source\\Repos\\Kurizaki\\Huffman-coding\\Huffman-coding-demo\\Huffman Coding Demo\\Huffman Coding Demo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\keanu\\.nuget\\packages\\huffman-coding\\1.0.1\\huffman-coding.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
