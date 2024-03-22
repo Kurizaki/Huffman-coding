@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\keanu\Source\Repos\Kurizaki\Huffman-coding\Huffman-coding-demo\Huffman Coding Demo\App.xaml
-11407045341
+3-1180370081
 
-41988744664
+6-795374866
 199713520584
-MainWindow.xaml;
+EncodeDecodeFile.xaml;EncodeDecodeText.xaml;MainWindow.xaml;
 
 True
 

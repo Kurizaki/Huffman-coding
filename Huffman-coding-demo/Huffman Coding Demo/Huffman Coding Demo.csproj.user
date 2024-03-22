@@ -7,6 +7,20 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="EncodeDecodeFile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EncodeDecodeText.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="EncodeDecodeFile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EncodeDecodeText.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
