@@ -15,7 +15,7 @@ namespace Huffman_UnitTests
         {
             // Arrange
             var huffmanCoding = new HuffmanCoding();
-            var encodedFilePath = Path.GetTempFileName();
+            var encodedFilePath =  Path.ChangeExtension(Path.GetTempFileName(), ".hfc");
             var encodedText = huffmanCoding.EncodeText(OriginalText);
             File.WriteAllText(encodedFilePath, encodedText);
 
