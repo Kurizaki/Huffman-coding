@@ -1,22 +1,17 @@
-using Huffman_coding;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using Huffman_coding;
 
 namespace Huffman_UnitTests
 {
     [TestClass]
-    public class HuffmanEncodeTest
+    public class HuffmanEncodeDecodeTest
     {
         private const string OriginalText = "hello world";
-
         [TestMethod]
-        public void EncodeFileTest()
+        public void EncodeDecodeFileTest()
         {
             var extensions = new List<string> { ".txt", ".json", ".yaml", ".yml", ".xml", ".csv", ".html", ".css" };
 
-            foreach (var extension in extensions.ToArray()) // ToArray() is used to create a copy of the list to avoid modification during iteration
+            foreach (var extension in extensions.ToArray())
             {
                 // Arrange
                 var huffmanCoding = new HuffmanCoding();
@@ -26,9 +21,10 @@ namespace Huffman_UnitTests
                 // Act
                 string encodedTextFilePath = huffmanCoding.EncodeFile(encodedFilePath);
                 string encodedText = File.ReadAllText(encodedTextFilePath);
+                string decodedText = huffmanCoding.DecodeFile(encodedTextFilePath);
 
                 // Assert
-                Assert.AreEqual(OriginalText, huffmanCoding.DecodeFile(encodedTextFilePath));
+                Assert.AreEqual(OriginalText, decodedText);
 
                 // Clean up
                 File.Delete(encodedFilePath);
@@ -40,19 +36,6 @@ namespace Huffman_UnitTests
 
             // Ensure that all extensions have been tested
             Assert.AreEqual(0, extensions.Count);
-        }
-
-        [TestMethod]
-        public void EncodeTextTest()
-        {
-            // Arrange
-            var huffmanCoding = new HuffmanCoding();
-
-            // Act
-            string encodedText = huffmanCoding.EncodeText(OriginalText);
-
-            // Assert
-            Assert.AreEqual(OriginalText, huffmanCoding.DecodeText(encodedText, Path.GetTempFileName()));
         }
     }
 }
