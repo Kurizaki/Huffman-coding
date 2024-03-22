@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Huffman-coding" Version="1.0.1" />
+    <PackageReference Include="Huffman-coding" Version="1.0.2" />
   </ItemGroup>
 
 </Project>

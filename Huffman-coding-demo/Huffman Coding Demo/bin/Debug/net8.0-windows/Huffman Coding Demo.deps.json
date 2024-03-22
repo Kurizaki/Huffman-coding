@@ -8,17 +8,17 @@
     ".NETCoreApp,Version=v8.0": {
       "Huffman Coding Demo/1.0.0": {
         "dependencies": {
-          "Huffman-coding": "1.0.1"
+          "Huffman-coding": "1.0.2"
         },
         "runtime": {
           "Huffman Coding Demo.dll": {}
         }
       },
-      "Huffman-coding/1.0.1": {
+      "Huffman-coding/1.0.2": {
         "runtime": {
           "lib/net8.0/Huffman-coding.dll": {
-            "assemblyVersion": "1.0.0.1",
-            "fileVersion": "1.0.0.1"
+            "assemblyVersion": "1.0.0.2",
+            "fileVersion": "1.0.0.2"
           }
         }
       }
@@ -30,12 +30,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Huffman-coding/1.0.1": {
+    "Huffman-coding/1.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XVmfZF7lO2nccQHiYfJR9bxzX9RI2UtbvZCNRxmwvAPNs53RsxBEeDICh+MpNsZoIiXji+VFUP6IgpWM42amxQ==",
-      "path": "huffman-coding/1.0.1",
-      "hashPath": "huffman-coding.1.0.1.nupkg.sha512"
+      "sha512": "sha512-GEvjIixOEN7IssaemSiAo3Tnvx2bYy5LsICyVvB9tgtzOR+GTodJaFmq5I9NUuWFQAg+VJC5+ZNDA059N/VazA==",
+      "path": "huffman-coding/1.0.2",
+      "hashPath": "huffman-coding.1.0.2.nupkg.sha512"
     }
   }
 }

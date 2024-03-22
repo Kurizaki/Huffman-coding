@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0-windows7.0": {
-      "Huffman-coding/1.0.1": {
+      "Huffman-coding/1.0.2": {
         "type": "package",
         "compile": {
           "lib/net8.0/Huffman-coding.dll": {}
@@ -14,16 +14,16 @@
     }
   },
   "libraries": {
-    "Huffman-coding/1.0.1": {
-      "sha512": "XVmfZF7lO2nccQHiYfJR9bxzX9RI2UtbvZCNRxmwvAPNs53RsxBEeDICh+MpNsZoIiXji+VFUP6IgpWM42amxQ==",
+    "Huffman-coding/1.0.2": {
+      "sha512": "GEvjIixOEN7IssaemSiAo3Tnvx2bYy5LsICyVvB9tgtzOR+GTodJaFmq5I9NUuWFQAg+VJC5+ZNDA059N/VazA==",
       "type": "package",
-      "path": "huffman-coding/1.0.1",
+      "path": "huffman-coding/1.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Huffman-Coding.md",
         "Screenshot 2024-03-22 091926.png",
-        "huffman-coding.1.0.1.nupkg.sha512",
+        "huffman-coding.1.0.2.nupkg.sha512",
         "huffman-coding.nuspec",
         "lib/net8.0/Huffman-coding.dll"
       ]
@@ -31,7 +31,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "Huffman-coding >= 1.0.1"
+      "Huffman-coding >= 1.0.2"
     ]
   },
   "packageFolders": {
@@ -86,7 +86,7 @@
         "dependencies": {
           "Huffman-coding": {
             "target": "Package",
-            "version": "[1.0.1, )"
+            "version": "[1.0.2, )"
           }
         },
         "imports": [

@@ -29,8 +29,17 @@ namespace Huffman_coding
             _encodingTable = new Dictionary<char, string>();
         }
 
+        /// <summary>
+        /// Calculates the frequencies of characters in the given text.
+        /// </summary>
+        /// <param name="text">The text for which frequencies are to be calculated.</param>
+        /// <returns>A dictionary containing characters as keys and their frequencies as values.</returns>
+        /// <exception cref="ArgumentNullException">Thrown when the input text is null.</exception>
         private Dictionary<char, int> CalculateFrequencies(string text)
         {
+            if (text == null)
+                throw new ArgumentNullException(nameof(text), "Input text cannot be null.");
+
             var frequencies = new Dictionary<char, int>();
 
             foreach (var c in text)
@@ -47,8 +56,18 @@ namespace Huffman_coding
             return frequencies;
         }
 
+        /// <summary>
+        /// Builds the Huffman encoding table starting from the root node.
+        /// </summary>
+        /// <param name="node">The current node in the Huffman tree.</param>
+        /// <param name="prefix">The prefix representing the encoding of characters.</param>
+        /// <exception cref="ArgumentNullException">Thrown when the node is null.</exception>
         private void BuildEncodingTable(HuffmanNode node, string prefix)
         {
+            if (node == null)
+                throw new ArgumentNullException(nameof(node), "Node cannot be null.");
+
+            // If the node represents a leaf (i.e., a character), add its encoding to the table
             if (node.Left == null && node.Right == null)
             {
                 _encodingTable[node.Character] = prefix;
@@ -59,8 +78,14 @@ namespace Huffman_coding
                 return;
             }
 
+            // Traverse down the left subtree and append '0' to the prefix
             BuildEncodingTable(node.Left, prefix + "0");
-            BuildEncodingTable(node.Right, prefix + "1");
+
+            // If the node has a non-null right child, traverse down the right subtree and append '1' to the prefix
+            if (node.Right != null)
+            {
+                BuildEncodingTable(node.Right, prefix + "1");
+            }
         }
 
         private string Encode(string text)
@@ -69,8 +94,14 @@ namespace Huffman_coding
 
             foreach (var c in text)
             {
+                // Check if the encoding table contains a mapping for the character
                 if (!_encodingTable.ContainsKey(c))
+                {
+                    // Handle case where character is not found in the encoding table
                     throw new InvalidOperationException($"Character '{c}' not found in encoding table.");
+                }
+
+                // Append the encoded bits for the character to the result
                 encodedText.Append(_encodingTable[c]);
             }
 
@@ -92,29 +123,27 @@ namespace Huffman_coding
                 if (currentNode == null)
                     throw new InvalidOperationException("Invalid Huffman encoding.");
 
+                // Navigate through the Huffman tree based on the encoded bits
                 currentNode = bit == '0' ? currentNode.Left : currentNode.Right;
+
+                // Check if the current node represents a character leaf node
                 if (currentNode?.Left == null && currentNode?.Right == null)
                 {
-                    decodedText.Append(currentNode?.Character);
-                    currentNode = _root;
+                    // Append the decoded character to the result
+                    if (currentNode?.Character != null)
+                    {
+                        decodedText.Append(currentNode.Character);
+                        currentNode = _root; // Reset back to the root for the next character
+                    }
+                    else
+                    {
+                        // Handle case where decoded character is null (not found in encoding table)
+                        throw new InvalidOperationException("Character not found in encoding table.");
+                    }
                 }
             }
 
             return decodedText.ToString();
-        }
-
-        /// <summary>
-        /// Initializes the Huffman coding process with the given text.
-        /// </summary>
-        /// <param name="text">The text to be encoded/decoded.</param>
-        public void Initialize(string text)
-        {
-            if (string.IsNullOrWhiteSpace(text))
-                throw new ArgumentException("Text cannot be null or empty.", nameof(text));
-
-            var frequencies = CalculateFrequencies(text);
-            _root = HuffmanTree.BuildTree(frequencies);
-            BuildEncodingTable(_root, "");
         }
 
         /// <summary>
@@ -128,7 +157,12 @@ namespace Huffman_coding
                 throw new ArgumentException("Text cannot be null or empty.", nameof(text));
 
             if (_encodingTable.Count == 0)
-                Initialize(text);
+            {
+                var frequencies = CalculateFrequencies(text);
+                _root = HuffmanTree.BuildTree(frequencies);
+                BuildEncodingTable(_root, "");
+            }
+
             return Encode(text);
         }
 
@@ -148,16 +182,21 @@ namespace Huffman_coding
             if (!CheckFileExtension(filepath))
                 throw new InvalidOperationException("File extension is not supported for encoding.");
 
+            // Read the text from the file
+            string text;
             using (var streamReader = new StreamReader(filepath))
             {
-                var text = streamReader.ReadToEnd();
-                var encodedText = EncodeText(text);
-
-                var encodedFilePath = Path.ChangeExtension(filepath, ".hfc");
-                File.WriteAllText(encodedFilePath, encodedText);
-
-                return encodedFilePath;
+                text = streamReader.ReadToEnd();
             }
+
+            // Encode the text using Huffman coding
+            var encodedText = EncodeText(text);
+
+            // Write the encoded text to a new file with the .hfc extension
+            var encodedFilePath = Path.ChangeExtension(filepath, ".hfc");
+            File.WriteAllText(encodedFilePath, encodedText);
+
+            return encodedFilePath;
         }
 
         /// <summary>
@@ -170,6 +209,7 @@ namespace Huffman_coding
             if (string.IsNullOrWhiteSpace(encodedText))
                 throw new ArgumentException("Encoded text cannot be null or empty.", nameof(encodedText));
 
+            // Decode the encoded text using Huffman coding
             return Decode(encodedText);
         }
 
@@ -188,6 +228,7 @@ namespace Huffman_coding
 
             string encodedText;
 
+            // Read the encoded text from the file
             if (Path.GetExtension(sourcePath) == ".hfc")
             {
                 using (var streamReader = new StreamReader(sourcePath))
@@ -200,6 +241,7 @@ namespace Huffman_coding
                 throw new InvalidOperationException("File format is not supported for decoding.");
             }
 
+            // Decode the encoded text using Huffman coding
             return Decode(encodedText);
         }
 

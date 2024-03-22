@@ -26,11 +26,12 @@ namespace Huffman_Coding_Demo
         public EncodeDecodeText()
         {
             InitializeComponent();
-            _huffmanCoding = new HuffmanCoding();
+            
         }
 
         private void EncryptButton_Click(object sender, RoutedEventArgs e)
         {
+            _huffmanCoding = new HuffmanCoding();
             string textToEncode = textBox.Text;
 
             if (!string.IsNullOrEmpty(textToEncode))
@@ -45,6 +46,7 @@ namespace Huffman_Coding_Demo
 
         private void DecryptButton_Click(object sender, RoutedEventArgs e)
         {
+            _huffmanCoding = new HuffmanCoding();
             string textToDecode = textBox.Text;
 
             if (!string.IsNullOrEmpty(textToDecode))
