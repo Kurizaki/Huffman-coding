@@ -55,6 +55,6 @@ Here, Huffman coding is employed to decode previously encoded text. First, an in
 
 ### License
 
-This project is licensed under the Beerware License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Beerware License - see the [LICENSE.md](LICENSE) file for details.
 
 These explanations provide a clear understanding of each code snippet's purpose and how it contributes to utilizing Huffman coding functionalities provided by the library.
